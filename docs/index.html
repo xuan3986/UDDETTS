@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UDDETTS Demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="css/bulma-slider.min.css">
+  <link rel="stylesheet" href="css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="js/fontawesome.all.min.js"></script>
+  <script src="js/bulma-carousel.min.js"></script>
+  <script src="js/bulma-slider.min.js"></script>
+  <script src="js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">UDDETTS: Unifying Discrete and Dimensional Emotions for Controllable Emotional Text-to-Speech</h1>
+          <div class="publication-info">
+            <div class="publication-section">
+              <div class="section-title">Paper authors</div>
+              <div class="section-content">
+                <span class="author-block">
+                  <a>Anonymous Author(s)</a>,</span>
+              </div>
+            </div>
+          
+            <div class="publication-section">
+              <div class="section-title">Main organization</div>
+              <div class="section-content">
+                <a>Anonymous Organization(s)</a>,</span>
+              </div>
+            </div>
+
+            <div class="publication-section">
+              <div class="section-title">Source Code</div>
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <span class="link-block">
+                      <a href="https://anonymous.4open.science/r/UDDETTS/" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code Link</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent neural codec language models have made great progress in the field of text-to-speech (TTS), 
+            but controllable emotional TTS still faces many challenges. 
+            Traditional methods rely on predefined discrete emotion labels to control emotion categories and intensities,
+            which can't capture the complexity and continuity of human emotional perception and expression.
+            The lack of large-scale emotional speech datasets with balanced emotion distributions and fine-grained emotion annotations
+            often causes overfitting in synthesis models and impedes effective emotion control.
+            To address these issues, we propose UDDETTS, a neural codec language model
+            unifying discrete and dimensional emotions for controllable emotional TTS.
+            This model introduces the interpretable Arousal-Dominance-Valence (ADV) space 
+            for dimensional emotion description and supports emotion control 
+            driven by either discrete emotion labels or nonlinearly quantified ADV values.
+            Furthermore, a semi-supervised training strategy is designed to comprehensively utilize
+            diverse speech datasets with different types of emotion annotations to train the UDDETTS.
+            Experiments show that UDDETTS achieves linear emotion control along the three dimensions of ADV space, 
+            and exhibits superior end-to-end emotional speech synthesis capabilities.
+          </p>
+        </div>
+        <tr>
+          <td><img src="demos/pictures/overview.png" width="800px" height="463px"></td>
+        </tr>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<br>
+<section class="hero"> 
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-centered">
+        <h2 class="title is-3"> Label-Controlled Emotional TTS </h2>
+        <h2 class="title is-5"> (Text: 'For the twentieth time that evening the two men shook hands.')</h2>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">UDDETTS</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td style="text-align: center;"><b>Neutral</b></th>
+      <td style="text-align: center;"><b>Happy</b></th>
+      <td style="text-align: center;"><b>Angry</b></th>
+      <td style="text-align: center;"><b>Disgust</b></th>
+      <td style="text-align: center;"><b>Sleepiness</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/UDDETTS-Neutral.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/UDDETTS-Happy.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/UDDETTS-Angry.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/UDDETTS-Disgust.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/UDDETTS-Sleepiness.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">UDDETTS w/o EME</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td style="text-align: center;"><b>Neutral</b></th>
+      <td style="text-align: center;"><b>Happy</b></th>
+      <td style="text-align: center;"><b>Angry</b></th>
+      <td style="text-align: center;"><b>Disgust</b></th>
+      <td style="text-align: center;"><b>Sleepiness</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/woEME-Neutral.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/woEME-Happy.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/woEME-Angry.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/woEME-Disgust.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/woEME-Sleepiness.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">CosyVoice</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td style="text-align: center;"><b>Neutral</b></th>
+      <td style="text-align: center;"><b>Happy</b></th>
+      <td style="text-align: center;"><b>Angry</b></th>
+      <td style="text-align: center;"><b>Disgust</b></th>
+      <td style="text-align: center;"><b>Sleepiness</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/CosyVoice-Neutral.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/CosyVoice-Happy.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/CosyVoice-Angry.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/CosyVoice-Disgust.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/label/CosyVoice-Sleepiness.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-centered">
+        <h2 class="title is-3"> ADV-Controlled Emotional TTS </h2>
+        <h2 class="title is-5"> (Text: 'For the twentieth time that evening the two men shook hands.')</h2>
+      </div>
+    </div>
+  </div>
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Linearly control on Valence</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/Valence.png" width="600px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,14,1]</b></th>
+      <td style="text-align: center;"><b>[14,14,2]</b></th>
+      <td style="text-align: center;"><b>[14,14,3]</b></th>
+      <td style="text-align: center;"><b>[14,14,4]</b></th>
+      <td style="text-align: center;"><b>[14,14,5]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-2.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-3.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-4.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-5.wav" type="audio/wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;"><b>[14,14,6]</b></th>
+      <td style="text-align: center;"><b>[14,14,7]</b></th>
+      <td style="text-align: center;"><b>[14,14,8]</b></th>
+      <td style="text-align: center;"><b>[14,14,9]</b></th>
+      <td style="text-align: center;"><b>[14,14,10]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-6.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-8.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-9.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-10.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,14,11]</b></th>
+      <td style="text-align: center;"><b>[14,14,12]</b></th>
+      <td style="text-align: center;"><b>[14,14,13]</b></th>
+      <td style="text-align: center;"><b>[14,14,14]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-11.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-12.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-13.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-14.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Linearly control on Arousal</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/Arousal.png" width="600px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[1,7,7]</b></th>
+      <td style="text-align: center;"><b>[2,7,7]</b></th>
+      <td style="text-align: center;"><b>[3,7,7]</b></th>
+      <td style="text-align: center;"><b>[4,7,7]</b></th>
+      <td style="text-align: center;"><b>[5,7,7]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/1-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/2-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/3-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/4-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/5-7-7.wav" type="audio/wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;"><b>[6,7,7]</b></th>
+      <td style="text-align: center;"><b>[7,7,7]</b></th>
+      <td style="text-align: center;"><b>[8,7,7]</b></th>
+      <td style="text-align: center;"><b>[9,7,7]</b></th>
+      <td style="text-align: center;"><b>[10,7,7]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/6-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/7-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/8-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/9-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/10-7-7.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[11,7,7]</b></th>
+      <td style="text-align: center;"><b>[12,7,7]</b></th>
+      <td style="text-align: center;"><b>[13,7,7]</b></th>
+      <td style="text-align: center;"><b>[14,7,7]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/11-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/12-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/13-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/14-7-7.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  
+
+
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Linearly control on Dominance</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/Dominance.png" width="600px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,1,1]</b></th>
+      <td style="text-align: center;"><b>[14,4,1]</b></th>
+      <td style="text-align: center;"><b>[14,7,1]</b></th>
+      <td style="text-align: center;"><b>[14,10,1]</b></th>
+      <td style="text-align: center;"><b>[14,14,1]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-1-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-4-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-7-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-10-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-14-1.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Expanded control on unseen region</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/bins_linear.png" width="300px"></td>
+      <td><img src="demos/pictures/bins_nonlinear.png" width="300px"></td>
+      <td><img src="demos/pictures/bins_semi_supervised.png" width="300px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,1,1]</b></th>
+      <td style="text-align: center;"><b>[6,1,1]</b></th>
+      <td style="text-align: center;"><b>[14,1,7]</b></th>
+      <td style="text-align: center;"><b>[1,1,14]</b></th>
+      <td style="text-align: center;"><b>[3,4,10]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/14-1-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/6-1-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/14-1-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/1-1-14.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/3-4-10.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-centered">
+        <h2 class="title is-3"> End-to-End Emotional TTS </h2>
+        <h2 class="title is-5"> (Text-only input)</h2>
+      </div>
+    </div>
+  </div>
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center; padding: 0 15px" class="title is-5"><b>Emotion</b></th>
+      <td style="text-align: left; padding: 0 15px" class="title is-5"><b>Text</b></th>
+      <td style="text-align: center; padding: 0 15px" class="title is-5"><b>UDDETTS</b></th>
+      <td style="text-align: center; padding: 0 15px" class="title is-5"><b>CosyVoice</b></th>
+      <td style="text-align: center;" class="title is-5"><b>UDDETTS w/o ADV predictor</b></th>
+    </tr>
+    <tr>
+      <td style="text-align: center;  padding: 0 15px"><b>Happy</b></th>
+      <td style="text-align: left;  padding: 0 15px"><b>I'm so happy to be friends with you.</b></th>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/UDDETTS_happy.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/CosyVoice_happy.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/woADVP_happy.wav" type="audio/wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center;  padding: 0 15px"><b>Angry</b></th>
+      <td style="text-align: left;  padding: 0 15px"><b>I'm very angry now because you didn't arrive on time!</b></th>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/UDDETTS_angry.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/CosyVoice_angry.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/woADVP_angry.wav" type="audio/wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center;  padding: 0 15px"><b>Sad</b></th>
+      <td style="text-align: left;  padding: 0 15px"><b>Lost wallet, missed last bus, tears drown my voiceless night.</b></th>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/UDDETTS_sad.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/CosyVoice_sad.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/woADVP_sad.wav" type="audio/wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center;  padding: 0 15px"><b>Sleepiness</b></th>
+      <td style="text-align: left;  padding: 0 15px"><b>I'm tired because I had to work overtime until evening.</b></th>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/UDDETTS_sleepiness.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/CosyVoice_sleepiness.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/woADVP_sleepiness.wav" type="audio/wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center;  padding: 0 15px"><b>Mixed</b></th>
+      <td style="text-align: left;  padding: 0 15px"><b>I love you so much, I can't live without you!</b></th>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/UDDETTS_mixed.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/CosyVoice_mixed.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;  padding: 0 10px'><source src="demos/text-adaptive/woADVP_mixed.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  
+
+</section>
+
+
+
+<br>
+<br>
+<br>
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+</html>
