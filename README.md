@@ -1,6 +1,8 @@
-# UDDETTS
+# UDDETTS: Unifying Discrete and Dimensional Emotions for Controllable Emotional Text-to-Speech
 
-### All code instructions and environment setup will be released soon. Please wait patiently.
+Link to demo page: [Demo page](https://anonymous.4open.science/w/UDDETTS/)
+
+### The source code has been open-sourced. Code instructions and model checkpoints will be released soon. Thank you for your patience.
 
 ## License
 The UDDETTS model can be used for non-commercial purposes, see [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The source code in this GitHub repository 

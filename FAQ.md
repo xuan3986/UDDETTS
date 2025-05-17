@@ -43,7 +43,15 @@ Due to the dataset license requirements, this code does not provide source datas
         |- dev
     | Other datasets
 ```
+## Pretrained models
+The `pretrained_models` include `campplus.onnx`, `speech_tokenizer.onnx`, `llm.pt`, `flow.pt`, and `hifi.pt`.
+Due to the large number of parameters,
+these models will be released soon on [Huggingface](https://huggingface.co/) soon.
 
+## Third party modules
+Matcha-TTS and roberta are third_party modules. Please check `third_party` directory. 
 
-## Module 'matcha' and 
-Matcha-TTS is a third_party module. Please check `third_party` directory. If there is no `Matcha-TTS`, execute `git clone git@github.com:shivammehta25/Matcha-TTS.git` in `third_party` directory.
+If there is no `Matcha-TTS`, execute `git clone git@github.com:shivammehta25/Matcha-TTS.git` in `third_party` directory.
+
+If there is no `roberta`, please download from [roberta-base](https://huggingface.co/FacebookAI/roberta-base/tree/main) to `third_party` directory.
+
