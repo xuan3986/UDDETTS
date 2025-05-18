@@ -46,7 +46,7 @@ Due to the dataset license requirements, this code does not provide source datas
 ## Pretrained models
 The `pretrained_models` include `campplus.onnx`, `speech_tokenizer.onnx`, `llm.pt`, `flow.pt`, and `hifi.pt`.
 Due to the large number of parameters,
-these models will be released soon on [Huggingface](https://huggingface.co/) soon.
+these models will soon be released on the non-anonymous platform [Huggingface](https://huggingface.co/).
 
 ## Third party modules
 Matcha-TTS and roberta are third_party modules. Please check `third_party` directory. 

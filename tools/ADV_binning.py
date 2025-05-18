@@ -17,7 +17,7 @@ def plot_histogram_with_bins(data, bins, title):
                     linewidth=1.5, alpha=0.8)
     
     kde = gaussian_kde(data)
-    x = np.linspace(min(data)-0.1, max(data)+0.1, 1000)  # 扩展10%的显示范围
+    x = np.linspace(min(data)-0.1, max(data)+0.1, 1000)
     plt.plot(x, kde(x), color='darkorange', linewidth=2, 
              label='KDE')
     

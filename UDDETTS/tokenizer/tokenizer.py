@@ -238,5 +238,5 @@ def get_tokenizer(
 
 if __name__ == '__main__':
     tokenizer = get_tokenizer(multilingual=True, num_languages=100, language='en', task='transcribe')
-    text_token = tokenizer.encode("<中立/neutral 中立/neutral> The Story Club Is Formed", allowed_special='all')
+    text_token = tokenizer.encode("<neutral> The Story Club Is Formed", allowed_special='all')
     print(text_token)
