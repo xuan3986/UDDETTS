@@ -12,6 +12,7 @@ is released under the following [license](./LICENSE).
 1. The code is based on the extensible model [CosyVoice 1.0](https://github.com/FunAudioLLM/CosyVoice).
 2. We used the third party code [Matcha](https://github.com/shivammehta25/Matcha-TTS).
 3. We used the third party model [roberta-base](https://huggingface.co/FacebookAI/roberta-base).
+4. We used the third party model [whisper](https://github.com/openai/whisper).
 
 
 ## Disclaimer

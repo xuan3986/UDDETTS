@@ -55,3 +55,5 @@ If there is no `Matcha-TTS`, execute `git clone git@github.com:shivammehta25/Mat
 
 If there is no `roberta`, please download from [roberta-base](https://huggingface.co/FacebookAI/roberta-base/tree/main) to `third_party` directory.
 
+If you want to use the tokenizer of `whisper` model, please execute `pip install -U openai-whisper`.
+
