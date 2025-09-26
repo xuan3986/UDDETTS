@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UDDETTS Demo</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -31,23 +33,12 @@
           <h1 class="title is-2 publication-title">UDDETTS: Unifying Discrete and Dimensional Emotions for Controllable Emotional Text-to-Speech</h1>
           <div class="publication-info">
             <div class="publication-section">
-              <div class="section-title">Paper authors</div>
+              <div class="section-title">Authors & Organization</div>
               <div class="section-content">
                 <span class="author-block">
-                  <a>Anonymous Author(s)</a>,</span>
+                  <a>Anonymous</a></span>
               </div>
-            </div>
-          
-            <div class="publication-section">
-              <div class="section-title">Main organization</div>
-              <div class="section-content">
-                <a>Anonymous Organization(s)</a>,</span>
-              </div>
-            </div>
-
-            <div class="publication-section">
-              <div class="section-title">Source Code</div>
-                <div class="column has-text-centered">
+              <div class="column has-text-centered">
                   <div class="publication-links">
                     <span class="link-block">
                       <a href="https://anonymous.4open.science/r/UDDETTS/" target="_blank"
@@ -58,7 +49,6 @@
                       <span>Code Link</span>
                     </a>
                   </div>
-                </div>
               </div>
             </div>
 
@@ -76,21 +66,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent neural codec language models have made great progress in the field of text-to-speech (TTS), 
-            but controllable emotional TTS still faces many challenges. 
-            Traditional methods rely on predefined discrete emotion labels to control emotion categories and intensities,
-            which can't capture the complexity and continuity of human emotional perception and expression.
-            The lack of large-scale emotional speech datasets with balanced emotion distributions and fine-grained emotion annotations
-            often causes overfitting in synthesis models and impedes effective emotion control.
-            To address these issues, we propose UDDETTS, a neural codec language model
-            unifying discrete and dimensional emotions for controllable emotional TTS.
-            This model introduces the interpretable Arousal-Dominance-Valence (ADV) space 
-            for dimensional emotion description and supports emotion control 
-            driven by either discrete emotion labels or nonlinearly quantified ADV values.
-            Furthermore, a semi-supervised training strategy is designed to comprehensively utilize
-            diverse speech datasets with different types of emotion annotations to train the UDDETTS.
-            Experiments show that UDDETTS achieves linear emotion control along the three dimensions of ADV space, 
-            and exhibits superior end-to-end emotional speech synthesis capabilities.
+          Recent large language models (LLMs) have made great progress in the field of text-to-speech (TTS), 
+          but they still face major challenges in synthesizing fine-grained emotional speech in an interpretable manner.
+          Traditional methods rely on discrete emotion labels to control emotion categories and intensities,
+          which cannot capture the complexity and continuity of human emotional perception and expression.
+          The lack of large-scale emotional speech datasets with balanced emotion distributions and fine-grained emotional annotations
+          often causes overfitting in synthesis models and impedes effective emotion control.
+          To address these issues, we propose UDDETTS, a universal LLM framework
+          unifying discrete and dimensional emotions for controllable emotional TTS.
+          This model introduces the interpretable Arousal-Dominance-Valence (ADV) space 
+          for dimensional emotion description and supports emotion control 
+          driven by either discrete emotion labels or nonlinearly quantified ADV values.
+          Furthermore, a semi-supervised training strategy is designed to comprehensively utilize
+          diverse speech datasets with different types of emotional annotations to train the UDDETTS.
+          Experiments show that UDDETTS achieves linear emotion control along three interpretable dimensions, 
+          and exhibits superior end-to-end emotional speech synthesis capabilities. 
+          Code and demos are available at: https://anonymous.4open.science/w/UDDETTS.
           </p>
         </div>
         <tr>
@@ -100,7 +91,221 @@
     </div>
   </div>
 </section>
+<br>
 <!-- End paper abstract -->
+<!-- Demos -->
+<br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-centered">
+        <h2 class="title is-3"> ADV-Controlled Emotional TTS </h2>
+        <h2 class="title is-5"> (Text: 'For the twentieth time that evening the two men shook hands.')</h2>
+      </div>
+    </div>
+  </div>
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Fine-grained control on Arousal</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/Arousal.png" width="600px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[1,7,7]</b></th>
+      <td style="text-align: center;"><b>[2,7,7]</b></th>
+      <td style="text-align: center;"><b>[3,7,7]</b></th>
+      <td style="text-align: center;"><b>[4,7,7]</b></th>
+      <td style="text-align: center;"><b>[5,7,7]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/1-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/2-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/3-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/4-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/5-7-7.wav" type="audio/wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;"><b>[6,7,7]</b></th>
+      <td style="text-align: center;"><b>[7,7,7]</b></th>
+      <td style="text-align: center;"><b>[8,7,7]</b></th>
+      <td style="text-align: center;"><b>[9,7,7]</b></th>
+      <td style="text-align: center;"><b>[10,7,7]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/6-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/7-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/8-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/9-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/10-7-7.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[11,7,7]</b></th>
+      <td style="text-align: center;"><b>[12,7,7]</b></th>
+      <td style="text-align: center;"><b>[13,7,7]</b></th>
+      <td style="text-align: center;"><b>[14,7,7]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/11-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/12-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/13-7-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/14-7-7.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Fine-grained control on Dominance</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/Dominance.png" width="600px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,1,1]</b></th>
+      <td style="text-align: center;"><b>[14,4,1]</b></th>
+      <td style="text-align: center;"><b>[14,7,1]</b></th>
+      <td style="text-align: center;"><b>[14,10,1]</b></th>
+      <td style="text-align: center;"><b>[14,14,1]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-1-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-4-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-7-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-10-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-14-1.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Fine-grained control on Valence</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/Valence.png" width="600px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,14,1]</b></th>
+      <td style="text-align: center;"><b>[14,14,2]</b></th>
+      <td style="text-align: center;"><b>[14,14,3]</b></th>
+      <td style="text-align: center;"><b>[14,14,4]</b></th>
+      <td style="text-align: center;"><b>[14,14,5]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-2.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-3.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-4.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-5.wav" type="audio/wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;"><b>[14,14,6]</b></th>
+      <td style="text-align: center;"><b>[14,14,7]</b></th>
+      <td style="text-align: center;"><b>[14,14,8]</b></th>
+      <td style="text-align: center;"><b>[14,14,9]</b></th>
+      <td style="text-align: center;"><b>[14,14,10]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-6.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-8.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-9.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-10.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,14,11]</b></th>
+      <td style="text-align: center;"><b>[14,14,12]</b></th>
+      <td style="text-align: center;"><b>[14,14,13]</b></th>
+      <td style="text-align: center;"><b>[14,14,14]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-11.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-12.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-13.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-14.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-centered">
+          <h2 class="title is-4">Expanded control on unseen region</h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <tr>
+      <td><img src="demos/pictures/bins_linear.png" width="300px"></td>
+      <td><img src="demos/pictures/bins_nonlinear.png" width="300px"></td>
+      <td><img src="demos/pictures/bins_semi_supervised.png" width="300px"></td>
+    </tr>
+  </table>
+
+  <br>
+  <table align = "center" style="text-align: center;">
+    <tr>
+      <td style="text-align: center;"><b>[14,1,1]</b></th>
+      <td style="text-align: center;"><b>[6,1,1]</b></th>
+      <td style="text-align: center;"><b>[14,1,7]</b></th>
+      <td style="text-align: center;"><b>[1,1,14]</b></th>
+      <td style="text-align: center;"><b>[3,4,10]</b></th>
+    </tr>
+
+    <tr>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/14-1-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/6-1-1.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/14-1-7.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/1-1-14.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/3-4-10.wav" type="audio/wav"></audio></td>
+    </tr>
+  </table>
+  <br>
+
 
 <br>
 <section class="hero"> 
@@ -192,221 +397,7 @@
     </tr>
   </table>
   <br>
-  <br>
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-centered">
-        <h2 class="title is-3"> ADV-Controlled Emotional TTS </h2>
-        <h2 class="title is-5"> (Text: 'For the twentieth time that evening the two men shook hands.')</h2>
-      </div>
-    </div>
-  </div>
-  <br>
-  <table align = "center" style="text-align: center;">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-centered">
-          <h2 class="title is-4">Linearly control on Valence</h2>
-        </div>
-      </div>
-    </div>
-    <br>
-    <tr>
-      <td><img src="demos/pictures/Valence.png" width="600px"></td>
-    </tr>
-  </table>
 
-  <br>
-  <table align = "center" style="text-align: center;">
-    <tr>
-      <td style="text-align: center;"><b>[14,14,1]</b></th>
-      <td style="text-align: center;"><b>[14,14,2]</b></th>
-      <td style="text-align: center;"><b>[14,14,3]</b></th>
-      <td style="text-align: center;"><b>[14,14,4]</b></th>
-      <td style="text-align: center;"><b>[14,14,5]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-1.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-2.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-3.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-4.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-5.wav" type="audio/wav"></audio></td>
-    </tr>
-
-    <tr>
-      <td style="text-align: center;"><b>[14,14,6]</b></th>
-      <td style="text-align: center;"><b>[14,14,7]</b></th>
-      <td style="text-align: center;"><b>[14,14,8]</b></th>
-      <td style="text-align: center;"><b>[14,14,9]</b></th>
-      <td style="text-align: center;"><b>[14,14,10]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-6.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-8.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-9.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-10.wav" type="audio/wav"></audio></td>
-    </tr>
-  </table>
-
-  <table align = "center" style="text-align: center;">
-    <tr>
-      <td style="text-align: center;"><b>[14,14,11]</b></th>
-      <td style="text-align: center;"><b>[14,14,12]</b></th>
-      <td style="text-align: center;"><b>[14,14,13]</b></th>
-      <td style="text-align: center;"><b>[14,14,14]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-11.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-12.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-13.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Valence/14-14-14.wav" type="audio/wav"></audio></td>
-    </tr>
-  </table>
-
-
-  <br>
-  <table align = "center" style="text-align: center;">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-centered">
-          <h2 class="title is-4">Linearly control on Arousal</h2>
-        </div>
-      </div>
-    </div>
-    <br>
-    <tr>
-      <td><img src="demos/pictures/Arousal.png" width="600px"></td>
-    </tr>
-  </table>
-
-  <br>
-  <table align = "center" style="text-align: center;">
-    <tr>
-      <td style="text-align: center;"><b>[1,7,7]</b></th>
-      <td style="text-align: center;"><b>[2,7,7]</b></th>
-      <td style="text-align: center;"><b>[3,7,7]</b></th>
-      <td style="text-align: center;"><b>[4,7,7]</b></th>
-      <td style="text-align: center;"><b>[5,7,7]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/1-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/2-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/3-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/4-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/5-7-7.wav" type="audio/wav"></audio></td>
-    </tr>
-
-    <tr>
-      <td style="text-align: center;"><b>[6,7,7]</b></th>
-      <td style="text-align: center;"><b>[7,7,7]</b></th>
-      <td style="text-align: center;"><b>[8,7,7]</b></th>
-      <td style="text-align: center;"><b>[9,7,7]</b></th>
-      <td style="text-align: center;"><b>[10,7,7]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/6-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/7-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/8-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/9-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/10-7-7.wav" type="audio/wav"></audio></td>
-    </tr>
-  </table>
-
-  <table align = "center" style="text-align: center;">
-    <tr>
-      <td style="text-align: center;"><b>[11,7,7]</b></th>
-      <td style="text-align: center;"><b>[12,7,7]</b></th>
-      <td style="text-align: center;"><b>[13,7,7]</b></th>
-      <td style="text-align: center;"><b>[14,7,7]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/11-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/12-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/13-7-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Arousal/14-7-7.wav" type="audio/wav"></audio></td>
-    </tr>
-  </table>
-  
-
-
-
-  <br>
-  <table align = "center" style="text-align: center;">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-centered">
-          <h2 class="title is-4">Linearly control on Dominance</h2>
-        </div>
-      </div>
-    </div>
-    <br>
-    <tr>
-      <td><img src="demos/pictures/Dominance.png" width="600px"></td>
-    </tr>
-  </table>
-
-  <br>
-  <table align = "center" style="text-align: center;">
-    <tr>
-      <td style="text-align: center;"><b>[14,1,1]</b></th>
-      <td style="text-align: center;"><b>[14,4,1]</b></th>
-      <td style="text-align: center;"><b>[14,7,1]</b></th>
-      <td style="text-align: center;"><b>[14,10,1]</b></th>
-      <td style="text-align: center;"><b>[14,14,1]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-1-1.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-4-1.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-7-1.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-10-1.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/Dominance/14-14-1.wav" type="audio/wav"></audio></td>
-    </tr>
-  </table>
-
-  <br>
-  <table align = "center" style="text-align: center;">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-centered">
-          <h2 class="title is-4">Expanded control on unseen region</h2>
-        </div>
-      </div>
-    </div>
-    <br>
-    <tr>
-      <td><img src="demos/pictures/bins_linear.png" width="300px"></td>
-      <td><img src="demos/pictures/bins_nonlinear.png" width="300px"></td>
-      <td><img src="demos/pictures/bins_semi_supervised.png" width="300px"></td>
-    </tr>
-  </table>
-
-  <br>
-  <table align = "center" style="text-align: center;">
-    <tr>
-      <td style="text-align: center;"><b>[14,1,1]</b></th>
-      <td style="text-align: center;"><b>[6,1,1]</b></th>
-      <td style="text-align: center;"><b>[14,1,7]</b></th>
-      <td style="text-align: center;"><b>[1,1,14]</b></th>
-      <td style="text-align: center;"><b>[3,4,10]</b></th>
-    </tr>
-
-    <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/14-1-1.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/6-1-1.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/14-1-7.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/1-1-14.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px; padding: 0 10px'><source src="demos/ADV/others/3-4-10.wav" type="audio/wav"></audio></td>
-    </tr>
-  </table>
-  <br>
   <br>
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">

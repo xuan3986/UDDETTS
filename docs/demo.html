@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UDDETTS Demo</title>
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="css/bulma-slider.min.css">
+  <link rel="stylesheet" href="css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <div class="container-max">
+    <div class="page-hero">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+        <div style="flex:1 1 60%">
+          <h1 class="publication-title">UDDETTS: Unifying Discrete and Dimensional Emotions for Controllable Emotional Text-to-Speech</h1>
+          <div class="publication-info">
+            <div class="publication-section">
+              <div class="section-title">Authors &amp; Organization</div>
+              <div class="section-content"><span class="author-block">Anonymous</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:0 1 320px; text-align:right">
+          <div class="top-actions">
+            <!-- GitHub button kept -->
+            <a href="https://anonymous.4open.science/r/UDDETTS/" target="_blank" rel="noopener" class="button is-dark is-rounded" title="Code Link">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+            <!-- Hugging Face button kept -->
+            <a href="https://anonymous.4open.science/r/UDDETTS/" class="button is-rounded" target="_blank" rel="noopener">
+              <span class="icon">
+                <img src="js/hf-logo.svg" class="icon-hf" alt="Hugging Face">
+              </span>
+              <span>Hugging Face</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Abstract card -->
+    <div class="card-pane">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content">
+        <p>
+          Recent large language models (LLMs) have made great progress in the field of text-to-speech (TTS), 
+          but they still face major challenges in synthesizing fine-grained emotional speech in an interpretable manner.
+          Traditional methods rely on discrete emotion labels to control emotion categories and intensities,
+          which cannot capture the complexity and continuity of human emotional perception and expression.
+          The lack of large-scale emotional speech datasets with balanced emotion distributions and fine-grained emotional annotations
+          often causes overfitting in synthesis models and impedes effective emotion control.
+          To address these issues, we propose UDDETTS, a universal LLM framework
+          unifying discrete and dimensional emotions for controllable emotional TTS.
+          This model introduces the interpretable Arousal-Dominance-Valence (ADV) space 
+          for dimensional emotion description and supports emotion control 
+          driven by either discrete emotion labels or nonlinearly quantified ADV values.
+          Furthermore, a semi-supervised training strategy is designed to comprehensively utilize
+          diverse speech datasets with different types of emotional annotations to train the UDDETTS.
+          Experiments show that UDDETTS achieves linear emotion control along three interpretable dimensions, 
+          and exhibits superior end-to-end emotional speech synthesis capabilities.
+        </p>
+        <div style="margin-top:20px; text-align:center">
+          <img class="responsive zoomable" src="demos/pictures/overview.png" alt="Arousal" width="900"
+              data-full="demos/pictures/overview.png" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ADV-Controlled Emotional TTS -->
+    <div class="card-pane">
+      <h2 class="title is-3">ADV-Controlled Emotional TTS</h2>
+      <div style="color:var(--muted); margin-bottom:10px">(Text: 'For the twentieth time that evening the two men shook hands.')</div>
+
+      <h3 class="title is-4">Fine-grained control on Arousal</h3>
+      <div style="margin-bottom:12px; text-align:center">
+        <img class="responsive zoomable" src="demos/pictures/Arousal.png" alt="Arousal" width="900"
+            data-full="demos/pictures/Arousal.png" />
+      </div>
+
+      <div class="audio-grid" aria-label="Arousal examples">
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [1,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/1-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [2,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/2-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [3,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/3-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [4,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/4-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [5,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/5-7-7.wav" type="audio/wav"></audio></div>
+
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [6,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/6-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [7,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/7-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [8,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/8-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [9,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/9-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [10,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/10-7-7.wav" type="audio/wav"></audio></div>
+
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [11,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/11-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [12,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/12-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [13,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/13-7-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,7,7]\)</span><audio controls><source src="demos/ADV/Arousal/14-7-7.wav" type="audio/wav"></audio></div>
+      </div>
+
+    </div>
+
+    <!-- Dominance-->
+    <div class="card-pane">
+      <h3 class="title is-4">Fine-grained control on Dominance</h3>
+      <div style="margin-bottom:12px; text-align:center">
+        <img class="responsive zoomable" src="demos/pictures/Dominance.png" alt="Arousal" width="900"
+            data-full="demos/pictures/Dominance.png" />
+      </div>
+      <div class="audio-grid">
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,1,1]\)</span><audio controls><source src="demos/ADV/Dominance/14-1-1.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,4,1]\)</span><audio controls><source src="demos/ADV/Dominance/14-4-1.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,7,1]\)</span><audio controls><source src="demos/ADV/Dominance/14-7-1.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,10,1]\)</span><audio controls><source src="demos/ADV/Dominance/14-10-1.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,1]\)</span><audio controls><source src="demos/ADV/Dominance/14-14-1.wav" type="audio/wav"></audio></div>
+      </div>
+    </div>
+    <!-- Valence -->
+    <div class="card-pane">
+      <h3 class="title is-4" style="margin-top:18px">Fine-grained control on Valence</h3>
+      <div style="margin-bottom:12px; text-align:center">
+        <img class="responsive zoomable" src="demos/pictures/Valence.png" alt="Arousal" width="900"
+            data-full="demos/pictures/Valence.png" />
+      </div>
+      <div class="audio-grid">
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,1]\)</span><audio controls><source src="demos/ADV/Valence/14-14-1.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,2]\)</span><audio controls><source src="demos/ADV/Valence/14-14-2.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,3]\)</span><audio controls><source src="demos/ADV/Valence/14-14-3.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,4]\)</span><audio controls><source src="demos/ADV/Valence/14-14-4.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,5]\)</span><audio controls><source src="demos/ADV/Valence/14-14-5.wav" type="audio/wav"></audio></div>
+
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,6]\)</span><audio controls><source src="demos/ADV/Valence/14-14-6.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,7]\)</span><audio controls><source src="demos/ADV/Valence/14-14-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,8]\)</span><audio controls><source src="demos/ADV/Valence/14-14-8.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,9]\)</span><audio controls><source src="demos/ADV/Valence/14-14-9.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,10]\)</span><audio controls><source src="demos/ADV/Valence/14-14-10.wav" type="audio/wav"></audio></div>
+
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,11]\)</span><audio controls><source src="demos/ADV/Valence/14-14-11.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,12]\)</span><audio controls><source src="demos/ADV/Valence/14-14-12.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,13]\)</span><audio controls><source src="demos/ADV/Valence/14-14-13.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">\(x_{adv} = [14,14,14]\)</span><audio controls><source src="demos/ADV/Valence/14-14-14.wav" type="audio/wav"></audio></div>
+      </div>
+    </div>
+
+    <!-- Expanded control -->
+    <div class="card-pane">
+      <h3 class="title is-4">Expanded control on unseen region</h3>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center">
+        <div class="image-box" style="max-width:300px">
+          <img class="responsive zoomable" src="demos/pictures/bins_linear.png" alt="Arousal" width="300"
+              data-full="demos/pictures/bins_linear.png" />
+          <div class="caption">Linear Binning</div>
+        </div>
+
+        <div class="image-box" style="max-width:300px">
+          <img class="responsive zoomable" src="demos/pictures/bins_nonlinear.png" alt="Arousal" width="300"
+              data-full="demos/pictures/bins_nonlinear.png" />
+          <div class="caption">Nonlinear Binning</div>
+        </div>
+
+        <div class="image-box" style="max-width:300px">
+          <img class="responsive zoomable" src="demos/pictures/bins_semi_supervised.png" alt="Arousal" width="300"
+              data-full="demos/pictures/bins_semi_supervised.png" />
+          <div class="caption">Semi-supervised</div>
+        </div>
+      </div>
+
+      <div class="audio-grid" style="margin-top:18px;">
+        <div class="audio-cell"><span class="audio-label">[14,1,1]</span><audio controls><source src="demos/ADV/others/14-1-1.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">[6,1,1]</span><audio controls><source src="demos/ADV/others/6-1-1.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">[14,1,7]</span><audio controls><source src="demos/ADV/others/14-1-7.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">[1,1,14]</span><audio controls><source src="demos/ADV/others/1-1-14.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">[3,4,10]</span><audio controls><source src="demos/ADV/others/3-4-10.wav" type="audio/wav"></audio></div>
+      </div>
+
+    </div>
+
+    <!-- Label-Controlled Emotional TTS -->
+    <div class="card-pane">
+      <h2 class="title is-3">Label-Controlled Emotional TTS</h2>
+      <div style="color:var(--muted); margin-bottom:10px">(Text: 'For the twentieth time that evening the two men shook hands.')</div>
+
+      <h3 class="title is-4">UDDETTS</h3>
+      <div class="audio-grid">
+        <div class="audio-cell"><span class="audio-label">Neutral</span><audio controls><source src="demos/label/UDDETTS-Neutral.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Happy</span><audio controls><source src="demos/label/UDDETTS-Happy.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Angry</span><audio controls><source src="demos/label/UDDETTS-Angry.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Disgust</span><audio controls><source src="demos/label/UDDETTS-Disgust.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Sleepiness</span><audio controls><source src="demos/label/UDDETTS-Sleepiness.wav" type="audio/wav"></audio></div>
+      </div>
+
+      <h3 class="title is-4" style="margin-top:18px">IndexTTS2</h3>
+      <div class="audio-grid">
+        <div class="audio-cell"><span class="audio-label">Neutral</span><audio controls><source src="demos/label/IndexTTS2-Neutral.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Happy</span><audio controls><source src="demos/label/IndexTTS2-Happy.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Angry</span><audio controls><source src="demos/label/IndexTTS2-Angry.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Disgust</span><audio controls><source src="demos/label/IndexTTS2-Disgust.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Sleepiness</span><audio controls><source src="demos/label/IndexTTS2-Sleepiness.wav" type="audio/wav"></audio></div>
+      </div>
+
+      <h3 class="title is-4" style="margin-top:18px">CosyVoice3</h3>
+      <div class="audio-grid">
+        <div class="audio-cell"><span class="audio-label">Neutral</span><audio controls><source src="demos/label/CosyVoice3-Neutral.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Happy</span><audio controls><source src="demos/label/CosyVoice3-Happy.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Angry</span><audio controls><source src="demos/label/CosyVoice3-Angry.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Disgust</span><audio controls><source src="demos/label/CosyVoice3-Disgust.wav" type="audio/wav"></audio></div>
+        <div class="audio-cell"><span class="audio-label">Sleepiness</span><audio controls><source src="demos/label/CosyVoice3-Sleepiness.wav" type="audio/wav"></audio></div>
+      </div>
+
+    </div>
+
+    <!-- End-to-End Emotional TTS -->
+    <div class="card-pane">
+      <h2 class="title is-3">End-to-End Emotional TTS</h2>
+      <div style="color:var(--muted); margin-bottom:10px">(UDDETTS takes text-only input, 
+        baselines are prompted with:
+        "Synthesize the emotional speech that best matches the text<|endofprompt|>Content Text")</div>
+
+      <div style="overflow:auto">
+        <table class="demo-table" style="width:100%;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:10px; font-weight:700">Emotion</th>
+              <th style="text-align:left; padding:10px; font-weight:700">Text</th>
+              <th style="text-align:center; padding:10px; font-weight:700">UDDETTS</th>
+              <th style="text-align:center; padding:10px; font-weight:700">CosyVoice2</th>
+              <th style="text-align:center; padding:10px; font-weight:700">IndexTTS2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px; font-weight:700">Happy</td>
+              <td style="padding:10px">I'm so happy to be friends with you.</td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/UDDETTS_happy.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/CosyVoice2_happy.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/IndexTTS2_happy.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:700">Angry</td>
+              <td style="padding:10px">I'm very angry now because you didn't arrive on time!</td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/UDDETTS_angry.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/CosyVoice2_angry.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/IndexTTS2_angry.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:700">Sad</td>
+              <td style="padding:10px">Lost wallet, missed last bus, tears drown my voiceless night.</td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/UDDETTS_sad.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/CosyVoice2_sad.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/IndexTTS2_sad.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:700">Sleepiness</td>
+              <td style="padding:10px">I'm tired because I had to work overtime until evening.</td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/UDDETTS_sleepiness.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/CosyVoice2_sleepiness.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/IndexTTS2_sleepiness.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:700">Mixed</td>
+              <td style="padding:10px">I love you so much, I can't live without you!</td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/UDDETTS_mixed.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/CosyVoice2_mixed.wav" type="audio/wav"></audio></td>
+              <td style="padding:10px; width: 200px; text-align:center"><audio controls><source src="demos/text-adaptive/IndexTTS2_mixed.wav" type="audio/wav"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="spacer"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="js/fontawesome.all.min.js"></script>
+  <script src="js/bulma-carousel.min.js"></script>
+  <script src="js/bulma-slider.min.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
