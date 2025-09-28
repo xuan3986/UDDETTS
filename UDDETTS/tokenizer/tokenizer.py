@@ -176,6 +176,7 @@ def get_encoding(name: str = "gpt2", num_languages: int = 99):
 
     specials = [
         "<endofprompt>"
+        "<|endofprompt|>"
         "<|endoftext|>",
         "<|startoftranscript|>",
         *[f"<|{lang}|>" for lang in list(LANGUAGES.keys())[:num_languages]],

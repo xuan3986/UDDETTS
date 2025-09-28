@@ -1,5 +1,5 @@
 ## Datasets
-Due to the dataset license requirements, this code does not provide source datasets and cleaning scripts for the time being. You need to download the dataset yourself and build a dataset directory structure as follows:
+Due to the dataset license requirements, this code does not provide source datasets and cleaning scripts for the time being. We provide a few data samples. You need to download the dataset yourself and build a dataset directory structure as follows:
 ```
     dataset
     |- EMOTTSDB
@@ -46,7 +46,7 @@ Due to the dataset license requirements, this code does not provide source datas
 ## Pretrained models
 The `pretrained_models` include `campplus.onnx`, `speech_tokenizer.onnx`, `llm.pt`, `flow.pt`, and `hifi.pt`.
 Due to the large number of parameters,
-these models will soon be released on the non-anonymous platform [Huggingface](https://huggingface.co/).
+these models will soon be released on the non-anonymous platform [Hugging Face](https://huggingface.co) or [Google Drive](https://drive.google.com/drive).
 
 ## Third party modules
 Matcha-TTS and roberta are third_party modules. Please check `third_party` directory. 
@@ -55,5 +55,5 @@ If there is no `Matcha-TTS`, execute `git clone git@github.com:shivammehta25/Mat
 
 If there is no `roberta`, please download from [roberta-base](https://huggingface.co/FacebookAI/roberta-base/tree/main) to `third_party` directory.
 
-If you want to use the tokenizer of `whisper` model, please execute `pip install -U openai-whisper`.
+To use the tokenizer of `whisper` model, please execute `pip install -U openai-whisper`.
 

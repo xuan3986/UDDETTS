@@ -200,9 +200,9 @@ sort: !name:UDDETTS.dataset.processor.sort
     sort_size: 500  # sort_size should be less than shuffle_size
 batch: !name:UDDETTS.dataset.processor.batch
     batch_type: 'dynamic'
-    max_frames_in_batch: 5000 # change batch size
+    max_frames_in_batch: 50000 # change batch size
 padding: !name:UDDETTS.dataset.processor.padding
-    use_spk_embedding: True # change to True 将utt_embedding设置为spk_embedding
+    use_spk_embedding: True # change to True set utt_embedding to spk_embedding
 
 # dataset processor pipeline
 data_pipeline: [
@@ -256,7 +256,7 @@ train_conf_gan:
     optim_conf_d:
         lr: 0.0002
     scheduler_d: constantlr
-    max_epoch: 10
+    max_epoch: 5
     grad_clip: 5
     accum_grad: 1 # in gan training, accum_grad must be 1
     log_interval: 100

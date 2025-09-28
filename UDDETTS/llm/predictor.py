@@ -39,10 +39,14 @@ class ADVPredictor(nn.Module):
 
 
 class ADVLoss(nn.Module):
-    def __init__(self):
+    
+    def __init__(self, alpha: float = 1.0, reduction: str = 'mean'):
         super().__init__()
-        self.loss_fn = nn.MSELoss()
-    def forward(self, pred, target, mask):
+        self.alpha = float(alpha)
+        assert reduction in ('mean', 'sum', 'none')
+        self.reduction = reduction
+        self.mse = nn.MSELoss(reduction='none')
+    def forward(self, pred, target, bin_centers, mask):
         """
         input:
             pred: [batch_size, 3]
@@ -53,7 +57,10 @@ class ADVLoss(nn.Module):
         """
         pred = pred[mask]
         target = target[mask]
-        loss = self.loss_fn(pred, target)
+        bin_centers = bin_centers[mask]
+        loss1 = self.mse(pred, target).sum()
+        loss2 = self.mse(pred, bin_centers).sum()
+        loss = self.alpha * loss1 + loss2
         return loss
         
         

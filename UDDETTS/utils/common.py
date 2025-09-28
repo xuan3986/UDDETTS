@@ -6,7 +6,6 @@ import numpy as np
 import torch
 
 IGNORE_ID = -1
-
 def pad_list(xs: List[torch.Tensor], pad_value: int):
     """Perform padding for the list of tensors.
 

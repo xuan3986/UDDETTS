@@ -62,7 +62,7 @@ class TransformerLM(torch.nn.Module):
                 self.quantizer.dominance_bins,
                 self.quantizer.valence_bins),
             llm_input_size)
-        self.emo_embedding = torch.nn.Embedding(10, llm_input_size) # emo label size = 10
+        self.emo_embedding = torch.nn.Embedding(10, llm_input_size) # emo label
         
         # 4. build speech token related modules
         self.speech_embedding = torch.nn.Embedding(speech_token_size, llm_input_size)
@@ -172,7 +172,7 @@ class TransformerLM(torch.nn.Module):
          
         # 4. predict ADV
         pred_ADV = self.ADV_predictor(text_token, text_token_len) # reberta encoder + regression head
-        loss1 = self.loss_adv(pred_ADV, ADV, mask)
+        loss1 = self.loss_adv(pred_ADV, ADV, self.quantizer.inverse_quantize(ADV_token, device), mask)
             
             
         # 5. add ADV_embedding to text_token_embedding

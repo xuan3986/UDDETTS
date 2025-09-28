@@ -26,13 +26,13 @@ and it is trained on over ten thousand hours of speech data, making the model mo
 - Create Conda env:
 
     ``` sh
-    conda create -n UDDETTS -y python=3.10
+    conda create -n UDDETTS -y python=3.8.20
     conda activate UDDETTS
     pip install -r requirements.txt
     ```
 - Model download:
   
-To ensure anonymity, pre-trained models trained on large-scale emotional speech datasets will be released on the open-source platform Hugging Face after review. Thank you for your patience.
+To ensure anonymity, pre-trained models trained on large-scale emotional speech datasets will be released on the open-source platform after review. Thank you for your patience.
 
 ## Usage
 Coming Soon.

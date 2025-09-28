@@ -80,7 +80,7 @@ def main():
                 'stream': False, 'speed': 1.0
             }
 
-            tts_speeches = []
+            tts_speeches = [] 
             for model_output in model.tts(**model_input):
                 tts_speeches.append(model_output['tts_speech'])
             tts_speeches = torch.concat(tts_speeches, dim=1)

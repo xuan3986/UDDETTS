@@ -12,18 +12,26 @@ emo_dict = {
     "other": 0,
     "unknown": 0,
     "sad": 1,
+    "frustrated": 1,
+    "hurt": 1,
     "angry": 2,
-    "frustrated": 3,
+    "confused": 3,
+    "worried": 3,
     "disgust": 4,
     "contempt": 4,
     "fearful": 5,
     "sleepiness": 6,
     "calm": 6,
+    "bored": 6,
     "neutral": 7,
+    "narration": 7,
     "surprise": 8,
+    "excited": 8,
     "happy": 9,
+    "laughing": 9,
     "amused": 9
 }
+
 def job(utt_list, parquet_file, utt2parquet_file, spk2parquet_file):
     try:
         start_time = time.time()

@@ -68,7 +68,7 @@ class DistributedSampler:
     def sample(self, data):
         """ Sample data according to rank/world_size/num_workers
 
-            Args:
+            Args: 
                 data(List): input data list
 
             Returns:
@@ -137,7 +137,7 @@ def Dataset(data_list_file,
         lists = list({utt2lists[utt] for utt in tts_data.keys() if utt2lists[utt] in lists})
     dataset = DataList(lists,
                        shuffle=shuffle,
-                       partition=partition)
+                       partition=partition) 
     if mode == 'inference':
         # map partial arg to parquet_opener func in inference mode
         data_pipeline[0] = partial(data_pipeline[0], tts_data=tts_data)

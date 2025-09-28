@@ -106,7 +106,7 @@ class UDDETTS:
         return tts_speech
 
     def tts(self, text, ADV_token, spk_embedding, stream=False, speed=1.0, **kwargs):
-        # this_uuid is used to track variables related to this inference thread
+        # this_uuid is used to track variables related to this thread
         this_uuid = str(uuid.uuid1())
         with self.lock:
             self.tts_speech_token_dict[this_uuid], self.llm_end_dict[this_uuid] = [], False
@@ -123,7 +123,7 @@ class UDDETTS:
                     this_tts_speech_token = torch.tensor(self.tts_speech_token_dict[this_uuid][:token_hop_len + self.token_overlap_len]) \
                         .unsqueeze(dim=0)
                     emo_token = this_tts_speech_token[:, 0]
-                    print("LLM Predict Emotion Token is", emo_token)
+                    # print("LLM Predict Emotion Token is", emo_token)
                     this_tts_speech_token = this_tts_speech_token[:, 1:]
                     this_tts_speech = self.token2wav(token=this_tts_speech_token,
                                                      ADV_token = ADV_token,
@@ -142,7 +142,7 @@ class UDDETTS:
             # deal with remain tokens, make sure inference remain token len equals token_hop_len when cache_speech is not None
             this_tts_speech_token = torch.tensor(self.tts_speech_token_dict[this_uuid]).unsqueeze(dim=0)
             emo_token = this_tts_speech_token[:, 0]
-            print("LLM Predict Emotion Token is", emo_token)
+            # print("LLM Predict Emotion Token is", emo_token)
             this_tts_speech_token = this_tts_speech_token[:, 1:]
             this_tts_speech = self.token2wav(token=this_tts_speech_token,
                                              ADV_token = ADV_token,
@@ -156,7 +156,7 @@ class UDDETTS:
             p.join()
             this_tts_speech_token = torch.tensor(self.tts_speech_token_dict[this_uuid]).unsqueeze(dim=0)
             emo_token = this_tts_speech_token[:, 0]
-            print("LLM Predict Emotion Token is", emo_token)
+            # print("LLM Predict Emotion Token is", emo_token)
             this_tts_speech_token = this_tts_speech_token[:, 1:]
             this_tts_speech = self.token2wav(token=this_tts_speech_token,
                                              ADV_token = ADV_token,

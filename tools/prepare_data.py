@@ -20,7 +20,7 @@ def main():
         wavs = list(glob.glob('{}/*/*wav'.format(data_path)))
 
         if speaker in {"bea", "jenie", "sam"}:
-            n = 15
+            n = 15 
         elif speaker in {"josh"}:
             n = 5
         elif speaker in {f"{i:04d}" for i in range(11, 21)}:
