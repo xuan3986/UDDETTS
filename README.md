@@ -2,18 +2,11 @@
 
 [Demo page](https://anonymous.4open.science/w/UDDETTS/);
 [Paper](https://openreview.net/pdf?id=DuPYSaCiep);
-[HuggingFace]();
+[Hugging Face]();
 
 ## Highlight🔥
 **UDDETTS** has been released! Compared to the previous version, some modules have been updated, 
 and it is trained on over ten thousand hours of speech data, making the model more stable and robust.
-
-
-## Roadmap
-
-- [x] 2025/05
-
-    - [x] Release the core architecture and base code of UDDETTS
 
 ## Install
 - Clone the repo:
@@ -36,6 +29,12 @@ To ensure anonymity, pre-trained models trained on large-scale emotional speech 
 
 ## Usage
 Coming Soon.
+
+## Roadmap
+
+- [x] 2025/05
+
+    - [x] Release the core architecture and base code of UDDETTS
 
 ## License
 The UDDETTS model can be used for non-commercial purposes, see [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The source code in this GitHub repository 

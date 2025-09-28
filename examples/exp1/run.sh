@@ -32,10 +32,10 @@ if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
 fi
 
 if [ ${stage} -le 3 ] && [ ${stop_stage} -ge 3 ]; then
-  echo "Extract campplus speaker embedding, you will get spk2embedding.pt and utt2embedding.pt"
+  echo "Extract speaker embedding, you will get spk2embedding.pt and utt2embedding.pt"
     python tools/extract_embedding.py \
       --dir data/Total \
-      --onnx_path $pretrained_model_dir/campplus.onnx
+      --onnx_path $pretrained_model_dir/voiceprint.onnx
 fi
 
 if [ ${stage} -le 4 ] && [ ${stop_stage} -ge 4 ]; then

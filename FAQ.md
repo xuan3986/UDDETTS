@@ -44,7 +44,7 @@ Due to the dataset license requirements, this code does not provide source datas
     | Other datasets
 ```
 ## Pretrained models
-The `pretrained_models` include `campplus.onnx`, `speech_tokenizer.onnx`, `llm.pt`, `flow.pt`, and `hifi.pt`.
+The `pretrained_models` include `voiceprint.onnx`, `speech_tokenizer.onnx`, `llm.pt`, `flow.pt`, and `hifi.pt`.
 Due to the large number of parameters,
 these models will soon be released on the non-anonymous platform [Hugging Face](https://huggingface.co) or [Google Drive](https://drive.google.com/drive).
 
