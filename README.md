@@ -28,7 +28,10 @@ and it is trained on over ten thousand hours of speech data, making the model mo
 To ensure anonymity, pre-trained models trained on large-scale emotional speech datasets will be released on the open-source platform after review. Thank you for your patience.
 
 ## Usage
-Coming Soon.
+[1] Download datasets:
+1. [MSP](https://lab-msp.com/MSP/MSP-Podcast.html)
+2. 
+
 
 ## Roadmap
 
