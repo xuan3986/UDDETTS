@@ -3,23 +3,18 @@
 
 stage=7
 stop_stage=7
-# EMOTTSDB is D_{E,L}, includes Preprocessed emovdb RAVDESS ESD
-data_dir=/home/jxliu/workspace/dataset/EMOTTSDB
 pretrained_model_dir=../../pretrained_models
 
 if [ ${stage} -le 0 ] && [ ${stop_stage} -ge 0 ]; then
   echo "Data preparation for D_{E,L}, prepare wav.scp/text/utt2spk/utt2emo/spk2utt"
     mkdir -p data
     python tools/prepare_data.py \
-      --src_dir $data_dir \
+      --src_dir /home/jxliu/workspace/dataset/EMOTTSDB \
       --des_dir data/EMOTTSDB
 fi
 
 if [ ${stage} -le 1 ] && [ ${stop_stage} -ge 1 ]; then
-  echo "ADV nonlinear quantization"
-    python tools/ADV_binning.py \
-      --data_path data/Total \
-      --pic_path tools/pictures
+  echo "ADV nonlinear quantization. Please refer to ADV_binning.ipynb"
 fi
 
 if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
@@ -72,8 +67,8 @@ if [ ${stage} -le 6 ] && [ ${stop_stage} -ge 6 ]; then
           --prompt_data data/Total/dev/parquet/data.list \
           --prompt_utt2data data/Total/dev/parquet/utt2data.list \
           --tts_text `pwd`/tts_text.json \
-          --llm_model exp/llm/ADV/best_40000.pt\
-          --flow_model exp/flow/ADV/best_73000.pt \
+          --llm_model exp/llm/ADV/best.pt\
+          --flow_model exp/flow/ADV/best.pt \
           --hifigan_model $pretrained_model_dir/hift.pt \
           --result_dir `pwd`/exp/result/control \
           --ADV_list $A $D $V \

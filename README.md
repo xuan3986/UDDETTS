@@ -28,19 +28,57 @@ and it is trained on over ten thousand hours of speech data, making the model mo
 To ensure anonymity, pre-trained models trained on large-scale emotional speech datasets will be released on the open-source platform after review. Thank you for your patience.
 
 ## Usage
-[1] Download datasets:
-1. [MSP](https://lab-msp.com/MSP/MSP-Podcast.html)
-2. 
+[1] Download English emotional speech datasets:
+1. [MSP-Podcast](https://lab-msp.com/MSP/MSP-Podcast.html)
+2. [IEMOCAP](https://sail.usc.edu/iemocap/)
+3. [CMU-MOSEI](http://multicomp.cs.cmu.edu/resources/cmu-mosei-dataset/)
+4. [Expresso](https://huggingface.co/datasets/ylacombe/expresso)
+5. [MELD](https://github.com/declare-lab/MELD)
+6. [EmoTale](https://github.com/snehadas/EmoTale)
+7. [EU-Emotion](https://pmc.ncbi.nlm.nih.gov/articles/PMC6478635)
+8. [ESD](https://github.com/HLTSingapore/Emotional-Speech-Data)
+9. [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D)
+10. [EmoV-DB](https://www.openslr.org/115/)
+11. [MEAD](https://github.com/uniBruce/Mead)
+12. [RAVDESS](https://github.com/tuncayka/speech_emotion)
 
+[2] Preprocess, since each dataset follows a different organization format, we handle them individually. We provide partial code and processed data samples as references.
+
+[3] Extract features, including ADV bins, speaker embedding, speech tokens, parquet list...
+(Stage 1-5)
+
+
+[4] Train (Stage 7)
+
+``` sh
+    cd examples/exp1
+    conda activate UDDETTS
+    bash run.sh
+```
+
+[5] Inference (Stage 6)
+
+A D V in range(1, 14), you can use a text from the test_examples.
+
+``` sh
+    cd examples/exp1
+    conda activate UDDETTS
+    bash run.sh
+```
 
 ## Roadmap
+
+- [x] 2025/09
+
+    - [x] We modify the code and upload some lightweight model files and data samples for demonstration.
 
 - [x] 2025/05
 
     - [x] Release the core architecture and base code of UDDETTS
 
 ## License
-The UDDETTS model can be used for non-commercial purposes, see [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The source code in this GitHub repository 
+The UDDETTS model can be used for non-commercial purposes, see [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
+The source code in this GitHub repository 
 is released under the following [license](./LICENSE).
 
 ## Acknowledge
